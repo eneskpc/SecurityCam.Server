@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "ts-node server.ts"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "express": "^4.18.1",
+    "typescript": "^4.7.4",
+    "ws": "^8.8.1"
+  }
+}
