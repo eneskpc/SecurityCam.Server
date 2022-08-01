@@ -18,9 +18,12 @@ wss.getUniqueID = () => {
 
 wss.on("connection", (ws: WebSocket) => {
   ws.uid = wss.getUniqueID();
-  ws.on("message", (message: string) => {
+  ws.on("message", (message: any) => {
     wss.clients.forEach((client) => {
-      client.send(client.uid + " said that" + message);
+      client.send(JSON.stringify({
+        uid: client.uid,
+        message: `${message}`
+      }));
     });
   });
 });
